@@ -33,16 +33,12 @@ todayDay=$(date+%A)
 [ $todayDay == "Saturday" ] && title="Shaka laka boom boom"
 
 
-
 ###############
 # Main        #
 ###############
 
 output=$(Welcome to planet $hostname, "$title $myname!"  and IT is $todayDate at $todayDay)
-
 cat <<EOF
-
-
 cowsay $output
 
 EOF
