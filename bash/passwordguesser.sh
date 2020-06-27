@@ -9,7 +9,43 @@
 # TASK 3: Improve it by giving them 5 tries to get it right before failing
 #           *** Do not use the exit command, and do not use a loop (e.g. while or for)
 
-myString="TestString"
-referenceString="password"
+echo "####task1##########"
 
-[ $myString = $referenceString ] && echo "Correct!" || echo "Incorrect."
+prompt="please try to guess the password: "
+read -p "$prompt" TestString
+referenceString="password"
+ echo "#######task2 and task 3##########"
+if [ $TestString = $referenceString ];then
+  echo "Correct!"
+  else
+    echo "Incorrect."
+    echo " you left 4 tries"
+  read -p "$prompt" TestString
+    if [ $TestString = $referenceString ];then
+    echo "Correct!"
+    else
+    echo "Incorrect."
+    echo " you left 3 tries"
+    read -p "$prompt" TestString
+      if [ $TestString = $referenceString ];then
+      echo "Correct!"
+      else
+      echo "Incorrect."
+      echo " you left 2 tries"
+      read -p "$prompt" TestString
+        if [ $TestString = $referenceString ];then
+        echo "Correct"
+        else
+        echo "Incorrect."
+        echo " you left 1tries"
+        read -p "$prompt" TestString
+          if [ $TestString = $referenceString ];then
+          echo "Correct!"
+          else
+          echo "Incorrect."
+          echo " Sorry, you are not the right person"
+        fi
+      fi
+    fi
+  fi
+fi
