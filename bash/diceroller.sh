@@ -17,5 +17,5 @@ $(( RANDOM % 6 + 1)) rolled,
 $(( RANDOM % 6 + 1)) rolled,
 $(( RANDOM % 6 + 1)) rolled,
 $(( RANDOM % 6 + 1)) rolled,
-$(( RANDOM % 6 + 1)) rolled
+$(( RANDOM % 6 + 1)) rolled.
 "
