@@ -19,7 +19,35 @@ while [ $# -gt 0 ]; do
 #          If the debug optionis recognized, set a variable with the debug level from the number given after the -d on the command line
 #             display an error if the user gave the -d option without a single digit number after it
 #          Anything that wasn't recognized on the command line should still go into the myargs array
+echo "task1"
+vmode=1
+dmode=0
+case $1 in
+  -h )
+      echo "-h is added for help"
+      echo "###########processing###############"
+      echo "-v option is for verbose"
+      echo "-d option is for debug mode and add any number withn it"
+      ;;
+  -v )
+      echo "-v is added for verbose mode"
+      echo "############verbose############"
+      ;;
 
+  -d )
+     case $2 in
+       [0-11] )
+       dmode=$2
+             echo "-d o[tion is added with number"
+             shift
+             ;;
+   *)
+      echo "please enter input in between [0-11]"
+      esac
+      shift
+
+    ;;
+esac
   # each time through the loop, shift the arguments left
   # this decrements the argument count for us
   shift
@@ -34,3 +62,13 @@ echo "Done"
 #         Tell the user if vebose mode is on
 #         Tell the user if debug mode is on and if it is, what number it is set to
 #         Print out the myargs array with a label
+if [ "$vmode" == "1" ]; then
+  echo "vmode is on"
+else
+  echo "vmode is off"
+fi
+if [ "$dmode" == "6" ]; then
+  echo "dmode is with level $dmode"
+else
+  echo "dmode is off"
+fi
