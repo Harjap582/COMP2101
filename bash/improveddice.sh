@@ -8,7 +8,7 @@
 #  put the bias, or minimum value for the generated number in another variable
 #  roll the dice using the variables for the range and bias i.e. RANDOM % range + bias
 
-echo "===========Task1===================="
+
 
 ##putting the number of sides in range variables
 range=6
@@ -23,15 +23,16 @@ echo "Rolling..."
 # roll the dice and save the results
 die1=$(( RANDOM % range + bias))
 die2=$(( RANDOM % range + bias))
+die3=$(( RANDOM % range + bias))
 # display the results
-echo "Rolled $die1, $die2"
+echo "Rolled $die1, $die2, $die3"
 
-echo "=========Task2=================="
+
 # Task 2:
 #  generate the sum of the dice
-sum=$(($die1 + $die2))
+sum=$(($die1 + $die2 + $die3))
 echo "The sum of the dice is $sum"
 
 #  generate the average of the dice
-average=$(($sum/2))
+average=$(($sum/3))
 echo "the average of the dice $average "

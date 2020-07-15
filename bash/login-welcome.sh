@@ -22,8 +22,8 @@ title="Overlord"
 myname=$USER       ##USING the $USER variable
 
 hostname=$(hostname)    #using $(hostname) variable
-todayDate=$(date+%H%M\ %p).
-todayDay=$(date+%A)
+todayDate=$(date +%H%M\ %p)
+todayDay=$(date +%A)
 [ $todayDay == "Sunday" ] && title="Shaktiman"
 [ $todayDay == "Monday" ] && title="Hatim"
 [ $todayDay == "Tuesday" ] && title="SHHH Koi Hai"
@@ -32,13 +32,8 @@ todayDay=$(date+%A)
 [ $todayDay == "Friday" ] && title="Lucky"
 [ $todayDay == "Saturday" ] && title="Shaka laka boom boom"
 
-
+output="Welcome to planet $hostname, $title, $myname! IT is $todayDate at $todayDay"
+cowsay $output
 ###############
 # Main        #
 ###############
-
-output=$(Welcome to planet $hostname, "$title $myname!"  and IT is $todayDate at $todayDay)
-cat <<EOF
-cowsay $output
-
-EOF
